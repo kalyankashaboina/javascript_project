@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body style="background-color: rgb(88, 86, 86);">
+
+
+<div id="sdiv"></div>
+
+
+
+
+
+
+    
+    <script>
+
+        let extract=JSON.parse(localStorage.getItem("gana"))
+        console.log(extract)
+
+let main=document.getElementById("sdiv");
+
+
+        let k=document.createElement("div")
+        let l=document.createElement("div")
+        let im1=document.createElement("img")
+        im1.setAttribute("src",extract["image"])
+        im1.style.width="100px"
+        let title2=document.createElement("h3")
+        title2.innerText=`Title : ${extract["title"]}`
+        let price2=document.createElement("h3")
+        price2.innerText=`Price : ${extract["price"]}`
+
+        let category=document.createElement("h3")
+        category.innerText=`category : ${extract["category"]}`
+
+        let desc=document.createElement("h4")
+        desc.innerText=`description : ${extract["description"]}`
+
+        // k.style.border="2px solid teal"
+        k.style.borderRadius="10px"
+        k.style.backgroundImage="linear-gradient(60deg,grey,90%,black)"
+        // main.style.boxShadow="10px 10px 30px"
+        main.style.borderRadius="10px"
+        main.style.backgroundImage="linear-gradient(60deg,grey,90%,black)"
+        main.style.display="flex"
+        main.style.width="60vw"
+
+        
+
+       
+k.append(title2,price2,category,desc)
+l.append(im1)
+        main.append(l,k)
+
+        
+    
+
+
+        
+
+
+
+    </script>
+</body>
+</html>

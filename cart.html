@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="back">back</button>
+    <h3>
+    </h3>
+   
+    <script>
+        
+
+document.getElementById("back").addEventListener("click",()=>{
+            window.location.assign("./main.html")
+        })
+        let cart=JSON.parse(localStorage.getItem("hello"))
+        console.log(cart)
+        cart.map((val,ind)=>{
+            let div=document.createElement("div")
+         
+       let pr=document.createElement("h4")
+       pr.innerText=`Id : ${cart[ind]["id"]}`
+       console.log(pr)
+
+       let im1=document.createElement("img")
+        im1.setAttribute("src",val["image"])
+        im1.style.width="100px"
+        console.log(im1);
+
+        div.style.borderRadius="10px"
+    div.style.boxShadow="10px 10px 30px "
+    
+    div.style.backgroundImage="linear-gradient(60deg,grey,90%,black)"
+
+    let btn2=document.createElement("button")
+    btn2.innerText="Delete"
+    // btn2.addEventListener(()=>{
+
+    // })
+
+
+
+div.append(pr,im1,btn2)
+       document.body.append(div)
+    })
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

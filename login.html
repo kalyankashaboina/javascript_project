@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url(./tamanna-rumee-eD1RNYzzUxc-unsplash.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        div{
+            width: fit-content;
+            padding: 50px;
+            backdrop-filter:blur(7px);
+            border-radius: 20px;
+            margin: auto;
+            margin-top:100px;
+        }   
+        div *{
+            color: black;
+            /* color: rgb(119, 150, 119); */
+            font-weight: 600;
+            font-size: 20px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+input{
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #000000;
+    color: burlywood;
+}
+input:focus{
+    color: rgb(245, 206, 156);
+    font-size: 15px;
+    outline: none;
+    border-bottom: 2px solid #000000;
+}
+#sub{
+    border: 2px solid black;
+    border-radius: 5px;
+    transition: 0.5s;
+    color: black;
+}
+#sub:hover{
+    color: white;
+background-color: black;
+
+}
+    </style>
+</head>
+<body >
+<div>
+<form>
+    <label for="username">login</label><br/><br>
+    <input type="text" id="username" ><br/><br>
+    <label for="password">password</label><br/><br>
+    <input type="password" id="password"><br/><br>
+    <input type="submit" id="sub">
+</form>
+</div>
+
+
+
+
+
+    <script>
+        let extract=JSON.parse(localStorage.getItem("hello"))
+        console.log(extract)
+     let bb=extract[0].gmail
+     let cc=extract[0].fstpassword
+     console.log(cc)
+let form=document.forms
+console.log(form)
+let arr=[];
+        form[0].addEventListener("submit",(e)=>{
+            e.preventDefault()
+
+        let user=e.target[0].value
+        let pswd=e.target[1].value
+        arr.push({username:user,password:pswd})
+        console.log(arr)
+        if(user==bb && pswd==cc){
+            alert("accepted")
+              window.location.assign("./main.html")
+    }
+        else{alert("wrong")}
+        
+     window.location.assign("./main.html")
+})
+
+
+
+
+    </script>
+</body>
+</html>
