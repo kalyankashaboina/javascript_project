@@ -7,9 +7,17 @@
     <style>
 
 
-        #mane{
+        #maindiv{
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            /* gap: 10px; */
+        }
+        #body>button{
+            background-color:skyblue;
+            border: none;
+            padding:10px;
+            border-radius: 5px;
+            margin: 5px;
         }
 
 
@@ -26,7 +34,7 @@
     
 
 
-    <div id="mane"></div>
+    <div id="maindiv"></div>
     <script>
         let arr=[
     {
@@ -272,7 +280,7 @@
 ]
 
 
-let mdiv=document.getElementById("mane")
+let mdiv=document.getElementById("maindiv")
 
 function aa(kal){
 kal.map((val)=>{
@@ -290,10 +298,20 @@ kal.map((val)=>{
     cate.innerText=` Category: ${val["category"]}`
 
 
-    cdiv.style.borderRadius="10px"
-    cdiv.style.boxShadow="10px 10px 30px"
-    cdiv.style.backgroundImage="linear-gradient(60deg,grey,90%,black)"
+    // cdiv.style.borderRadius="10px"
+    // cdiv.style.boxShadow="10px 10px 30px"
+   // cdiv.style.backgroundImage="linear-gradient(60deg,grey,90%,black)"
+//    cdiv.style.backgroundImage="linear-gradient(azure,white)"
     cdiv.style.display="grid"
+
+
+    cdiv.style.backgroundImage="linear-gradient(azure,White)"
+cdiv.style.paddingLeft="7px";
+cdiv.style.margin="6px";
+cdiv.style.border="1px solid transparent";
+cdiv.style.borderRadius="4px";
+cdiv.style.width="280px";
+cdiv.style.height="406px";
     
 
     
@@ -307,8 +325,8 @@ kal.map((val)=>{
     // mdiv.style.gridTemplateColumns="repeat(3,1fr)"
 
 
-    mdiv.style.gap="20px"
-
+    // mdiv.style.gap="px"
+mdiv.style.backgroundColor="lightgrey"
 
 
 
@@ -329,13 +347,13 @@ kal.map((val)=>{
         window.location.assign("cart.html")
     }))
 
-    btnmore.style.backgroundColor="orange"
+    btnmore.style.backgroundColor="lightgrey"
     btnmore.style.padding="10px"
 btnmore.style.borderRadius="10px"
 
 btnmore1.style.color="white"
 btnmore1.style.padding="10px"
-btnmore1.style.backgroundColor="green"
+btnmore1.style.backgroundColor="goldenrod"
 btnmore1.style.borderRadius="10px"
 
 
