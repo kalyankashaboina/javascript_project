@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #login{
+            margin-left: 20px;
+        }
+
+        
+#div{ 
+width: fit-content;
+padding: 50px;
+backdrop-filter:blur(10px) ;
+border-radius: 20px;
+margin: auto;
+margin-top:100px;
+
+}
+#anc{border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    transition: 0.5s;
+}
+#anc:hover{
+    background-color: black;
+}
+div *{
+    color: cornsilk;
+    /* color: rgb(119, 150, 119); */
+    font-weight: 600;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#body{
+    background-image: url(./domenico-gentile-N7Q0Ir-hXeA-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+input{
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #000000;
+    color: rgb(102, 133, 102);
+}
+input:focus{
+    
+    font-size: 15px;
+    outline: none;
+    border-bottom: 2px solid #000000;
+}
+#regi{
+    transition: 0.5s;
+}
+#regi:hover{
+    background-color: #000000;
+}
+    </style>
+</head>
+<body id="body">
+<div id="div">
+    <form > 
+    <label for="fname">First Name</label><BR>
+    <input type="text" id="fname"><br/><br>
+
+    <label id="two" for="sname">last name</label><br/>
+    <input type="text" id="sname"><br/><br/>
+
+    <label id="three" for="gmail">Gmail</label><br/>
+    <input type="text" id="gmail"><br/><br/>
+
+    <label id="fr" for="fstpassword">Enter password</label><br/>
+    <input type="password" id="fstpassword"><br/><br/>
+
+    <label id="gr"for="cnfmpassword">Confirm password</label><br/>
+    <input type="password"id="cnfmpassword"><br/><br/>
+
+    <input type="submit" value="REGISTER" id="regi" style="border: 2px solid black; border-radius: 5px;padding: 5px;padding-left: 10px;padding-right: 10px;"><br><br>
+   <a id="anc">Already have account</a>
+</form>
+</div>
+
+<!-- <button id="clear"> clear</button> -->
+
+
+    <script>
+        // let clear=document.getElementById("clear")
+        // clear.addEventListener("click",()=>{
+        //     localStorage.clear()
+        // })
+        let form=document.forms
+    // console.log(form[0])
+    
+   
+    // document.getElementById("two").style.color="blue"
+
+    // document.getElementById("div").style.backgroundColor="gey"
+    
+    let arr=[];
+        form[0].addEventListener("submit",(e)=>{
+            e.preventDefault()
+        
+        let fname=e.target[0].value
+        let sname=e.target[1].value
+       
+        let gmail=e.target[2].value
+        let fstpassword=e.target[3].value
+        let cnfmpassword=e.target[4].value
+
+
+        arr.push({fname:fname,sname:sname,gmail:gmail,fstpassword:fstpassword,cnfmpassword:cnfmpassword})
+        console.log(arr)
+
+        if(fstpassword.length>6 && fstpassword.length<=15 && cnfmpassword.length>6 && cnfmpassword.length<=15 && fstpassword===cnfmpassword ){
+            alert("sucess..")
+            window.location.assign("./login.html")
+            localStorage.setItem("hello",JSON.stringify(arr))
+           
+    
+    }
+        else{alert("Oops...wrong password!")}
+
+        // if(fname+sname==username){
+        //     alert("good")
+        // }
+        // else{alert("wrong user nane")}
+       
+        
+
+
+        
+
+
+
+
+
+        })
+
+        let kk=document.getElementById("anc")
+        kk.addEventListener("click",(()=>{
+            window.location.assign("./index.html")
+        }))
+
+        
+
+
+
+
+
+    </script>
+</body>
+</html>
